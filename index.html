@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naveed Mohammad Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Naveed MHD</h1>
+            </div>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon"><i class="fas fa-bars"></i></label>
+            <ul class="menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><button id="theme-toggle"><i class="fas fa-moon"></i></button></li>
+            </ul>
+        </nav>
+        <div class="header-content">
+            <div class="left-side">
+                <h1 class="animate-header">Hello, It's Me</h1>
+                <h2 class="animate-header">Naveed Mohammad</h2>
+                <p class="animate-header">And I'm a Trainee</p>
+                <div class="social-links animate-header">
+                    <a href="https://www.linkedin.com/in/naveed-mohammad-24a169295/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/share/q7TTGQpUkvJookct/?mibextid=qi2Omg" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/naveedmhd__?igsh=MXZ4emFyZ2Vmb2Jzdw==" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/message/EIRPO6KSEWFCI1" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                <a href="NaveedMHDResume.pdf" class="btn-download animate-header" download>Download CV</a>
+            </div>
+            <div class="right-side animate-header">
+                <div class="profile-pic">
+                    <img src="my.png" alt="Naveed Mohammad">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="content-section">
+            <h2>About Me</h2>
+            <p>I am completing my NVQ Level 5 Diploma in ICT at the College of Technology, Kurunegala, and have completed the CCNAv7 course. I am eager to start my career in the networking field, combining my technical skills with a passion for innovative solutions.</p>
+        </section>
+
+        <section id="skills" class="content-section">
+            <h2>My Skills</h2>
+            <div class="skills-container">
+                <div class="skill-bar">
+                    <h4>Networking</h4>
+                    <div class="progress">
+                        <div class="progress-value" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <h4>Web Development</h4>
+                    <div class="progress">
+                        <div class="progress-value" style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <h4>Database Management</h4>
+                    <div class="progress">
+                        <div class="progress-value" style="width: 85%;"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <h4>Software Testing</h4>
+                    <div class="progress">
+                        <div class="progress-value" style="width: 65%;"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <h4>Graphic Design</h4>
+                    <div class="progress">
+                        <div class="progress-value" style="width: 70%;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="content-section">
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>Diploma of Education, Information Technology</h3>
+                <p>Department of Technical Education & Training - Sri Lanka</p>
+                <p>Jan 2023 - Jul 2024 | Grade: NVQ Level 5</p>
+                <ul>
+                    <li>Database Systems 1 & 2</li>
+                    <li>Graphic Design</li>
+                    <li>Software Programming</li>
+                    <li>System Analysis & Design</li>
+                    <li>Workplace Information & Communication</li>
+                    <li>Software Testing</li>
+                    <li>Web Programming</li>
+                    <li>Local Area Network</li>
+                    <li>Project Planning</li>
+                </ul>
+            </div>
+            <div class="education-item">
+                <h3>Certificate in System, Networking, and LAN/WAN Management</h3>
+                <p>Vocational Training Authority</p>
+                <p>Mar 2023 - Dec 2023 | Grade: CCNAv7</p>
+                <ul>
+                    <li>Network design and configuration</li>
+                    <li>Troubleshooting enterprise networks</li>
+                    <li>IP addressing and network security</li>
+                    <li>Network automation</li>
+                    <li>Cisco Packet Tracer proficiency</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects" class="content-section">
+            <h2>My Projects</h2>
+
+            <div class="project">
+                <img src="network_project_thumbnail.jpg" alt="Network Plan Design for Classroom">
+                <div class="project-details">
+                    <h3>Network Plan Design for Classroom</h3>
+                    <p>Simulated a complex enterprise network with multiple subnets, VLANs, and routing protocols using Cisco Packet Tracer.</p>
+                    <div class="project-links">
+                        <a href="NetworkProject_2024.pkt" download class="btn-download">Download .pkt File <i class="fas fa-download"></i></a>
+                        <a href="#" class="btn-view" onclick="showPacketTracerInstructions('enterprise_network')">View Instructions <i class="fas fa-eye"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <img src="calendar_project_thumbnail.jpg" alt="Dynamic Calendar Design">
+                <div class="project-details">
+                    <h3>Dynamic Calendar Design</h3>
+                    <p>Created a dynamic calendar using HTML, CSS, and PHP, showcasing web development skills and date manipulation techniques.</p>
+                    <div class="project-links">
+                        <a href="calendar_project.zip" download class="btn-download">Download Project <i class="fas fa-download"></i></a>
+                        <a href="CALHTML.html" target="_blank" class="btn-view">View Demo <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="contact">
+    <h2>Contact Me</h2>
+    <form id="contactForm" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+
+    <div id="formMessage"></div>
+</div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 by Naveed MHD. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

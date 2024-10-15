@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="CALCSS.css">
+</head>
+<body>
+    <div class="calendar">
+        <div class="month">
+            <div class="month-nav">
+                <span class="prev">&#10094;</span>
+                <span class="month-year">June 2024</span>
+                <span class="next">&#10095;</span>
+            </div>
+            <div class="month-image">
+                <img id="month-image" src="images/june.jpg" alt="Month Image">
+            </div>
+        </div>
+        <ul class="weekdays">
+            <li>Mo</li>
+            <li>Tu</li>
+            <li>We</li>
+            <li>Th</li>
+            <li>Fr</li>
+            <li>Sa</li>
+            <li>Su</li>
+        </ul>
+        <ul class="days">
+            <!-- Days will be dynamically inserted here by JavaScript -->
+        </ul>
+        <div class="date-time">
+            <div class="current-time"></div>
+            <div class="current-date"></div>
+        </div>
+    </div>
+    
+    <script src="CALJS.js"></script>
+</body>
+</html>
