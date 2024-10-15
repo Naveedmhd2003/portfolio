@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const next = document.querySelector('.next');
     const monthYear = document.querySelector('.month-year');
     const days = document.querySelector('.days');
-    const monthImage = document.getElementById('month-image');
+    const monthImage = document.getElementById('month-image'); // Make sure you have an <img> element with this ID in your HTML
     const currentDateElement = document.querySelector('.current-date');
     const currentTimeElement = document.querySelector('.current-time');
 
@@ -54,17 +54,19 @@ document.addEventListener('DOMContentLoaded', function() {
     function renderCalendar() {
         days.innerHTML = '';
         monthYear.textContent = `${months[currentMonth]} ${currentYear}`;
-        monthImage.src = monthImages[currentMonth];
+        monthImage.src = monthImages[currentMonth]; // Set the image for the current month
 
         let firstDay = new Date(currentYear, currentMonth, 1).getDay();
         let lastDate = new Date(currentYear, currentMonth + 1, 0).getDate();
 
         firstDay = (firstDay + 6) % 7;
 
+        // Add empty days for the previous month
         for (let i = 0; i < firstDay; i++) {
             days.innerHTML += '<li></li>';
         }
 
+        // Add days of the current month
         for (let i = 1; i <= lastDate; i++) {
             const dateStr = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`;
             const isHoliday = holidays[dateStr] !== undefined;
@@ -72,13 +74,13 @@ document.addEventListener('DOMContentLoaded', function() {
             const holidayClass = isHoliday ? 'holiday' : '';
             const tooltip = isHoliday ? `title="${holidayName}"` : '';
             const todayClass = (i === currentDate.getDate() && currentMonth === currentDate.getMonth() && currentYear === currentDate.getFullYear()) ? 'today' : '';
-			
+            
             days.innerHTML += `<li class="${holidayClass} ${todayClass}" ${tooltip}>${i}</li>`;
         }
 
+        // Add empty days for the next month
         const totalDays = firstDay + lastDate;
         const remainingDays = 7 - (totalDays % 7);
-
         if (remainingDays < 7) {
             for (let i = 0; i < remainingDays; i++) {
                 days.innerHTML += '<li></li>';
@@ -96,6 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
         currentTimeElement.textContent = formattedTime;
     }
 
+    // Event listeners for navigating months
     prev.addEventListener('click', () => {
         currentMonth--;
         if (currentMonth < 0) {
