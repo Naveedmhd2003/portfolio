@@ -17,10 +17,10 @@ document.addEventListener('DOMContentLoaded', function() {
     ];
 
     const monthImages = [
-        'images/january.jpg', 'images/february.jpg', 'images/march.jpg',
-        'images/april.jpg', 'images/may.jpg', 'images/june.jpg',
-        'images/july.jpg', 'images/august.jpg', 'images/september.jpg',
-        'images/october.jpg', 'images/november.jpg', 'images/december.jpg'
+        'january.jpg', 'february.jpg', 'march.jpg',
+        'april.jpg', 'may.jpg', 'june.jpg',
+        'july.jpg', 'august.jpg', 'september.jpg',
+        'october.jpg', 'november.jpg', 'december.jpg'
     ];
 
     const holidays = {
