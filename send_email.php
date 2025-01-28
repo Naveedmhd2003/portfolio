@@ -1,4 +1,9 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'vendor/autoload.php';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = strip_tags(trim($_POST['name']));
     $name = str_replace(array("\r","\n"), array(" "," "), $name);
@@ -11,19 +16,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    $recipient = "Naveedmhd2003m@gmail.com";
-    $subject = "Message from $name via Portfolio Contact Form";
+    $mail = new PHPMailer(true);
 
-    $email_content = "Name: $name\n";
-    $email_content .= "Email: $email\n\n";
-    $email_content .= "Message:\n$message\n";
+    try {
+        // SMTP Server Settings
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com'; // Gmail SMTP server
+        $mail->SMTPAuth = true;
+        $mail->Username = 'naveedmhd2003m@gmail.com'; // Your Gmail address
+        $mail->Password = 'your-gmail-app-password'; // Gmail App Password
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = 587;
 
-    $email_headers = "From: $name <$email>";
+        // Email Settings
+        $mail->setFrom($email, $name);
+        $mail->addAddress('naveedmhd2003m@gmail.com'); // Your email address
+        $mail->Subject = "Message from $name via Portfolio Contact Form";
+        $mail->Body = "Name: $name\nEmail: $email\n\nMessage:\n$message";
 
-    if (mail($recipient, $subject, $email_content, $email_headers)) {
+        $mail->send();
         echo "Thank you! Your message has been sent.";
-    } else {
-        echo "Oops! Something went wrong and we couldn't send your message.";
+    } catch (Exception $e) {
+        echo "Oops! Something went wrong. Mailer Error: {$mail->ErrorInfo}";
     }
 }
 ?>
